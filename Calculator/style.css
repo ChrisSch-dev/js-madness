@@ -1,0 +1,132 @@
+:root {
+    --bg: #f0f2f5;
+    --display-bg: #fff;
+    --btn-bg: #e0e3ea;
+    --btn-bg-hover: #d1d3db;
+    --operator-bg: #1877f2;
+    --operator-bg-hover: #1252a3;
+    --equal-bg: #e74c3c;
+    --equal-bg-hover: #c0392b;
+    --border: #bfc9d1;
+    --text: #222;
+    --display-text: #222;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background 0.2s, color 0.2s;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    padding: 7px 16px;
+    border-radius: 6px;
+    border: none;
+    background: var(--operator-bg);
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index: 10;
+}
+#theme-toggle:hover { background: var(--operator-bg-hover); }
+
+.calculator {
+    margin-top: 80px;
+    padding: 24px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background 0.2s, border 0.2s;
+}
+
+.display {
+    width: 260px;
+    height: 50px;
+    font-size: 2em;
+    text-align: right;
+    margin-bottom: 18px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--display-bg);
+    color: var(--display-text);
+    padding-right: 18px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-gap: 10px;
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    border-radius: 8px;
+    border: none;
+    background: var(--btn-bg);
+    color: var(--text);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.btn:hover {
+    background: var(--btn-bg-hover);
+}
+.btn.operator {
+    background: var(--operator-bg);
+    color: #fff;
+}
+.btn.operator:hover {
+    background: var(--operator-bg-hover);
+}
+.btn.equal {
+    background: var(--equal-bg);
+    color: #fff;
+    font-weight: bold;
+    grid-column: 4 / 5;
+    grid-row: 5 / 6;
+}
+.btn.equal:hover {
+    background: var(--equal-bg-hover);
+}
+
+#clear {
+    background: #bdbdbd;
+    color: #222;
+}
+#clear:hover {
+    background: #888;
+    color: #fff;
+}
+
+/* Dark Theme */
+body.dark {
+    --bg: #181a20;
+    --display-bg: #232b39;
+    --btn-bg: #232b39;
+    --btn-bg-hover: #333b4a;
+    --operator-bg: #3b6ad6;
+    --operator-bg-hover: #254294;
+    --equal-bg: #f15b4f;
+    --equal-bg-hover: #b43d35;
+    --border: #333b4a;
+    --text: #f1f1f1;
+    --display-text: #f1f1f1;
+}
+body.dark .calculator {
+    background: #232b39;
+    border: 1px solid var(--border);
+}
